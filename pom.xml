@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>java-wasmtime-demo</module>
+        <module>java-graalvm-demo</module>
+        <module>java-extism-demo</module>
     </modules>
 
     <properties>
