@@ -69,10 +69,10 @@ public class JavaWasmtimeMemoryDemo {
                     try (var instance = new Instance(store, module, imports)) {
 
                         LOG.info("Extracting export...");
-                        try (var runFunc = instance.getFunc(store, "run").orElseThrow(() -> new RuntimeException("function not found: run"))) {
+                        try (var func = instance.getFunc(store, "run").orElseThrow()) {
 
                             LOG.info("Calling exported function...");
-                            WasmFunctions.consumer(store, runFunc).accept();
+                            WasmFunctions.consumer(store, func).accept();
 
                             LOG.info("Done.");
                         }

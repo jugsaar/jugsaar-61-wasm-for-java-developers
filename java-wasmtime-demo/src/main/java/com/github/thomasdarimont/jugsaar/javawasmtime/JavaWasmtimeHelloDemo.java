@@ -40,9 +40,9 @@ public class JavaWasmtimeHelloDemo {
                 LOG.info("Creating callback...");
                 WasmFunctions.Consumer0 helloFuncCallback = () -> {
                     // note that this callback takes no parameters and produces no results
-                    LOG.info("CB!! Calling back...");
+                    LOG.info("Inside callback...");
                     // custom code here
-                    LOG.info("CB!! > Hello World!");
+                    LOG.info("Hello World!");
                 };
 
                 try (Func helloFuncToImport = WasmFunctions.wrap(store, helloFuncCallback)) {
@@ -58,12 +58,12 @@ public class JavaWasmtimeHelloDemo {
 
                         // Next we poke around a bit to extract the `run` function from the module.
                         LOG.info("Extracting exported function...");
-                        try (var runFunc = instance.getFunc(store, "run").orElseThrow(() -> new RuntimeException("function not found: run"))) {
-                            WasmFunctions.Consumer0 runFuncConsumer = WasmFunctions.consumer(store, runFunc);
+                        try (var func = instance.getFunc(store, "run").orElseThrow()) {
+                            WasmFunctions.Consumer0 funcCaller = WasmFunctions.consumer(store, func);
 
                             // now invoke the run function
                             LOG.info("Calling exported function...");
-                            runFuncConsumer.accept();
+                            funcCaller.accept();
 
                             LOG.info("Done.");
                         }
