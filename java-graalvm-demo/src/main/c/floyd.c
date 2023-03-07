@@ -3,7 +3,7 @@
 // compile c to wasm via emcc compiler
 // emcc -o floyd.wasm floyd.c
 
-// run compilied wasm directly on graalvm
+// run compiled wasm directly on graalvm
 // wasm --Builtins=wasi_snapshot_preview1 floyd.wasm
 
 int main() {

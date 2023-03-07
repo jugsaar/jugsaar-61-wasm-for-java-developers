@@ -12,7 +12,6 @@
         <module>java-wasmtime-demo</module>
         <module>java-graalvm-demo</module>
         <module>java-extism-demo</module>
-        <module>jwebassembly-demo</module>
     </modules>
 
     <properties>

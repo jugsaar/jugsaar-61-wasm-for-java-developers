@@ -30,12 +30,10 @@ public class JavaWasmtimeHelloDemo {
             LOG.info("Compiling module...");
             try (Engine engine = store.engine();
                  // .wasm: Web Assembly binary format
-                 Module module = Module.fromBinary(engine, WasmIO.loadWasmFromClasspath("hello.wasm"))
+//                 Module module = Module.fromBinary(engine, WasmIO.loadWasmFromClasspath("hello.wasm"))
                  // .wat: Web Assembly Text Format
-//                  Module module = Module.fromFile(engine, WasmIO.locateWatFromClasspath("hello.wat").toFile().getAbsolutePath())
+                  Module module = Module.fromFile(engine, WasmIO.locateWatFromClasspath("hello.wat").toFile().getAbsolutePath())
             ) {
-
-
                 // We want to expose a custom function callback to the wasm module
                 LOG.info("Creating callback...");
                 WasmFunctions.Consumer0 helloFuncCallback = () -> {

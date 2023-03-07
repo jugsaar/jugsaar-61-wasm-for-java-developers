@@ -1,6 +1,8 @@
 (module
 
+  ;; define custom parameter type (address and length)
   (type $t0 (func (param i32 i32)))
+
   ;; imported log function with the given parameter signaturs
   (import "" "log" (func $.log (type $t0)))
 
@@ -15,6 +17,6 @@
     call $.log
   )
 
-  ;; exported run function called from outside
+  ;; exported "run" function to be called from outside
   (export "run" (func $run))
 )
