@@ -56,8 +56,6 @@ public class JavaWasmtimeMemoryDemo {
                         var message = new String(data);
 
                         LOG.info("message: {}", message);
-
-                        return Optional.empty();
                     };
 
                     var logFunc = Extern.fromFunc(new Func(store, logFuncType, logFuncHandler));

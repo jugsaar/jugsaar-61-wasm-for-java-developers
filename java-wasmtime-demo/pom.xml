@@ -16,7 +16,7 @@
         <dependency>
             <groupId>io.github.kawamuray.wasmtime</groupId>
             <artifactId>wasmtime-java</artifactId>
-            <version>0.13.0</version>
+            <version>0.15.0</version>
         </dependency>
 
         <dependency>

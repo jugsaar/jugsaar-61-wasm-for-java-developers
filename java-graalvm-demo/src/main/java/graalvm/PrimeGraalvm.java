@@ -7,7 +7,7 @@ public class PrimeGraalvm {
 
     public static void main(String[] args) throws Exception {
 
-        String arg = "13";
+        String arg = "" + Integer.MAX_VALUE;
 
         File file = new File("prime.wasm");
         Source.Builder sourceBuilder = Source.newBuilder("wasm", file);

@@ -12,6 +12,7 @@ func main() {
 	if err != nil {
 		fmt.Println("error scanning value: " + err.Error())
 	} else {
+	    // see https://pkg.go.dev/math/big#Int.ProbablyPrime
 		if number.ProbablyPrime(10) {
 			fmt.Println(os.Args[1] + " is probably prime\n")
 		} else {
